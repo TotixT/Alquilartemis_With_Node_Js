@@ -9,13 +9,12 @@ import cors from "cors";
 const app = express();
 
 
-app.set("port",5000);
+app.set("port",3000);
 const corsOption={
     methods: ["GET","POST","PUT","DELETE"],
 }
-app.use(express.json());
 app.use(cors(corsOption));
-
+app.use(express.json());
 /* primer argumento es la ruta donde va a ir los datos de la pagina */
 app.use("/api/categorias",categoriaRoutes);
 app.use("/api/constructoras",constructorasRoutes);

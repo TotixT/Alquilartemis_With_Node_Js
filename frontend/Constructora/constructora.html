@@ -70,7 +70,7 @@
             ></button>
           </div>
           <div class="modal-body ">
-            <form id="formulario" class="form-select-lg mb-3" method="POST">
+            <form id="formularioConstructora" class="form-select-lg mb-3">
            
               <div class="mb-3">
                 <label for="ConstructoraNombre" class="col-form-label">Constructora Nombre:</label>
@@ -97,18 +97,15 @@
                 <input type="number" class="form-control formTam" id="TelefonoContacto" />
               </div>
 
+              <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+            </form>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary btn-lg"
-              data-bs-dismiss="modal"
-            >
+            <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal" >
               Close
             </button>
-            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+            
           </div>
-        </form>
         </div>
       </div>
     </div>
@@ -119,7 +116,7 @@
     <!-- MODAL UPDATE INI-->
     <div
     class="modal fade"
-    id="updateCategory"
+    id="updateConstruct"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -127,7 +124,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
-          <h2 class="modal-title" id="exampleModalLabel">Actualizar Categoria</h2>
+          <h2 class="modal-title" id="exampleModalLabel">Actualizar Constructora</h2>
           <button
             type="button"
             class="btn-close"
@@ -136,24 +133,36 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form id="formularioUpdate" class="form-select-lg mb-3" method="POST">
+          <form id="formularioUpdate" class="form-select-lg mb-3">
            
             <div class="mb-3">
-              <label for="CategoriaNombre" class="col-form-label">Categoria Nombre:</label>
-              <input type="text" class="form-control formTam" id="CategoriaNombreUpdate" />
+              <label for="ConstructoraNombreUpdate" class="col-form-label">Constructora Nombre:</label>
+              <input type="text" class="form-control formTam" id="ConstructoraNombreUpdate" />
             </div>
            
             <div class="mb-3">
-              <label for="Descripcion" class="col-form-label">Descripcion:</label>
-              <input type="text" class="form-control formTam" id="DescripcionUpdate" />
+              <label for="NitUpdate" class="col-form-label">NIT:</label>
+              <input type="number" class="form-control formTam" id="NitUpdate" />
             </div>
 
             <div class="mb-3">
-              <label for="Imagen" class="col-form-label">Imagen:</label>
-              <input type="text" class="form-control formTam" id="ImagenUpdate" />
+              <label for="RepresentanteNombreUpdate" class="col-form-label">Nombre Representante:</label>
+              <input type="text" class="form-control formTam" id="RepresentanteNombreUpdate" />
+            </div>
+
+            <div class="mb-3">
+              <label for="EmailContactoUpdate" class="col-form-label">Email Contacto:</label>
+              <input type="text" class="form-control formTam" id="EmailContactoUpdate" />
+            </div>
+
+            <div class="mb-3">
+              <label for="TelefonoContactoUpdate" class="col-form-label">Telefono Contacto:</label>
+              <input type="number" class="form-control formTam" id="TelefonoContactoUpdate" />
             </div>
 
             <input id="idUpdate" name="idUpdate" type="hidden" value="">
+            <button type="submit" class="btn btn-primary btn-lg">Actualizar</button>
+          </form>
          
         </div>
         <div class="modal-footer">
@@ -164,9 +173,8 @@
           >
             Close
           </button>
-          <button type="submit" class="btn btn-primary btn-lg">Actualizar</button>
+
         </div>
-      </form>
       </div>
     </div>
   </div>
