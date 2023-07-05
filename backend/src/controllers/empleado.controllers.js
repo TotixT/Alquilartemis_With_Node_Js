@@ -8,6 +8,7 @@ const getEmpleados = async (req, res) => {
     );
     console.log(result);
     res.json(result);
+    return result;
   } catch (error) {
     res.status(500);
     res.send(error.message);
@@ -21,6 +22,7 @@ const addEmpleados = async(req, res) =>{
     const connection = await getConnection();
     const result = await connection.query("INSERT INTO empleados SET ?", empleado);
     res.json(result);
+    return result;
   } catch (error) {
     res.status(500);
     res.send(error.message);

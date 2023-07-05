@@ -6,6 +6,8 @@ import categoriasRoutes from "./routes/categorias.routes.js";
 import constructorasRoutes from "./routes/constructoras.routes.js";
 import empleadosRoutes from "./routes/empleados.routes.js";
 import productosRoutes from "./routes/productos.routes.js";
+import cors from "cors";
+
 
 //almacenamos a nuestro framework en una constante para poder importarlo a los demas modulos
 const app = express();
@@ -15,7 +17,12 @@ app.set("port", 5000);
 
 //Middleware
 //parsea de JSON
+const corsOption={
+    methods: ["GET","POST","PUT","DELETE"],
+}   
 app.use(express.json());
+
+app.use(cors(corsOption));
 
 //Routes
 //use es un metodo de node JS que entiende todos los metodos http(POST,GET,PUT, etc)

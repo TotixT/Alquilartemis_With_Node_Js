@@ -11,5 +11,11 @@ router.get("/", categoriaController.getCategorias);
 //Definicion de una ruta para agregar categorias utilizando el metodo POST
 router.post("/", categoriaController.addCategorias);
 
+router.get("/:id", categoriaController.getCategoria );
+
+router.delete("/:id", categoriaController.deleteCategoria );
+
+router.put("/:id", categoriaController.updateCategorias );
+
 //exportamos la constante para poder usarla desde otros modulos
 export default router;
