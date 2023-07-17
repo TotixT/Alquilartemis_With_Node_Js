@@ -58,7 +58,7 @@ export const obtenerProducto = async (id) => {
 
 
 
-export const editarProducto = async (category) => {
+export const editarProducto = async (category,id) => {
     try {
         await fetch(`${url}/${id}`,{
           method: 'PUT',

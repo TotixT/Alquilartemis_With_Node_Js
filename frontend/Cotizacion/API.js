@@ -1,24 +1,24 @@
-const url = "http://localhost:5000/api/empleados/";
+ const url = "http://localhost:5000/api/cotizaciones/";
 
 
-export const obtainEmpleados = async () => {
+export const obtainCotizaciones = async () => {
     try {
-        const constructoras = await fetch(url,{
+        const cotizaciones = await fetch(url,{
             method: "GET"
         });
-        const datosConstructoras = constructoras.json();
-        return datosConstructoras;
+        const datosCotizaciones = cotizaciones.json();
+        return datosCotizaciones;
     } catch (error) {
         console.log(error);
     }
 };
 
 
-export const nuevaEmpleado = async (categoria) => {
+export const nuevoCotizacion = async (cotizacion) => {
     try {
         await fetch(url,{
             method: "POST",
-            body: JSON.stringify(categoria),
+            body: JSON.stringify(cotizacion),
             headers:{
                 'Content-Type':'application/json'
             }
@@ -30,7 +30,7 @@ export const nuevaEmpleado = async (categoria) => {
 };
 
 
-export const deleteEmpleado = async (id) => {
+export const deleteCotizacion = async (id) => {
     try {
         await fetch(`${url}/${id}`,{
             method:"DELETE",
@@ -46,10 +46,10 @@ export const deleteEmpleado = async (id) => {
 
 
 
-export const obtenerEmpleado = async (id) => {
+export const obtenerCotizacion = async (id) => {
     try {
-        const EmployeeId = await fetch(`${url}/${id}`);
-        const result = await EmployeeId.json();
+        const CotizacionId = await fetch(`${url}/${id}`);
+        const result = await CotizacionId.json();
         return result;
       } catch (error) {
         console.log(error);
@@ -58,11 +58,11 @@ export const obtenerEmpleado = async (id) => {
 
 
 
-export const editarEmpleado = async (category,id) => {
+export const editarCotizacion = async (cotization,id) => {
     try {
         await fetch(`${url}/${id}`,{
           method: 'PUT',
-          body: JSON.stringify(category),
+          body: JSON.stringify(cotization),
           headers: {
               'Content-Type': 'application/json'
           }

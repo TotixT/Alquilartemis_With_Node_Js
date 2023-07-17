@@ -37,21 +37,21 @@
   
     <section class="modalito">
       <center>
-      <button id="btnCrearCategoria" type="button" class="btn btn-primary tamano" data-bs-toggle="modal" data-bs-target="#modalProducto" data-bs-whatever="@getbootstrap">
-        Agregar Producto
+      <button id="btnCrearCategoria" type="button" class="btn btn-primary tamano" data-bs-toggle="modal" data-bs-target="#modalCotizacion" data-bs-whatever="@getbootstrap">
+        Agregar Cotizacion
       </button>
       
     </center>
     <br>
 
-    <div class="modal fade" id="modalProducto" tabindex="-1"
+    <div class="modal fade" id="modalCotizacion" tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header bg-primary text-white">
-            <h2 class="modal-title" id="exampleModalLabel">Nueva Producto</h2>
+            <h2 class="modal-title" id="exampleModalLabel">Nueva Cotizacion</h2>
             <button
               type="button"
               class="btn-close"
@@ -60,26 +60,36 @@
             ></button>
           </div>
           <div class="modal-body ">
-            <form id="formularioProductos" class="form-select-lg mb-3">
+            <form id="formularioCotizaciones" class="form-select-lg mb-3">
            
               <div class="mb-3">
-                <label for="ProductoNombre" class="col-form-label">Producto Nombre:</label>
-                <input type="text" class="form-control formTam" id="ProductoNombre" />
+                <label for="EmpleadoNombre" class="col-form-label">Empleado Nombre:</label>
+                <input type="number" class="form-control formTam" id="EmpleadoNombre" />
               </div>
              
               <div class="mb-3">
-                <label for="PrecioXDia" class="col-form-label">PrecioXDia:</label>
-                <input type="number" class="form-control formTam" id="PrecioXDia" />
+                <label for="ConstructoraNombre" class="col-form-label">Constructora Nombre:</label>
+                <input type="number" class="form-control formTam" id="ConstructoraNombre" />
               </div>
 
               <div class="mb-3">
-                <label for="Stock" class="col-form-label">Stock:</label>
-                <input type="number" class="form-control formTam" id="Stock" />
+                <label for="Fecha" class="col-form-label">Fecha Cotizacion:</label>
+                <input type="date" class="form-control formTam" id="Fecha" />
               </div>
 
               <div class="mb-3">
-                <label for="ProductoCategoria" class="col-form-label">Categoria Producto:</label>
-                <input type="number" class="form-control formTam" id="ProductoCategoria" />
+                <label for="Hora" class="col-form-label">Hora Alquiler:</label>
+                <input type="time" class="form-control formTam" id="Hora" />
+              </div>
+
+              <div class="mb-3">
+                <label for="Dia" class="col-form-label">Dia Alquiler:</label>
+                <input type="text" class="form-control formTam" id="Dia" />
+              </div>
+
+              <div class="mb-3">
+                <label for="Duracion" class="col-form-label">Duracion Alquiler:</label>
+                <input type="text" class="form-control formTam" id="Duracion" />
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
@@ -105,7 +115,7 @@
     <!-- MODAL UPDATE INI-->
     <div
     class="modal fade"
-    id="updateProduct"
+    id="updateCotization"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -125,23 +135,33 @@
           <form id="formularioUpdate" class="form-select-lg mb-3">
            
             <div class="mb-3">
-              <label for="ProductoNombreUpdate" class="col-form-label">Producto Nombre:</label>
-              <input type="text" class="form-control formTam" id="ProductoNombreUpdate" />
+              <label for="EmpleadoNombre" class="col-form-label">Empleado Nombre:</label>
+              <input type="number" class="form-control formTam" id="EmpleadoNombreUpdate" />
             </div>
            
             <div class="mb-3">
-              <label for="PrecioXDiaUpdate" class="col-form-label">PrecioXDia:</label>
-              <input type="number" class="form-control formTam" id="PrecioXDiaUpdate" />
+              <label for="ConstructoraNombre" class="col-form-label">Constructora Nombre:</label>
+              <input type="number" class="form-control formTam" id="ConstructoraNombreUpdate" />
             </div>
 
             <div class="mb-3">
-              <label for="Stock" class="col-form-label">Stock:</label>
-              <input type="number" class="form-control formTam" id="StockUpdate" />
+              <label for="Fecha" class="col-form-label">Fecha Cotizacion:</label>
+              <input type="date" class="form-control formTam" id="FechaUpdate" />
             </div>
 
             <div class="mb-3">
-              <label for="ProductoCategoria" class="col-form-label">Categoria Producto:</label>
-              <input type="number" class="form-control formTam" id="ProductoCategoriaUpdate" />
+              <label for="Hora" class="col-form-label">Hora Alquiler:</label>
+              <input type="time" class="form-control formTam" id="HoraUpdate" />
+            </div>
+
+            <div class="mb-3">
+              <label for="Dia" class="col-form-label">Dia Alquiler:</label>
+              <input type="text" class="form-control formTam" id="DiaUpdate" />
+            </div>
+
+            <div class="mb-3">
+              <label for="Duracion" class="col-form-label">Duracion Alquiler:</label>
+              <input type="text" class="form-control formTam" id="DuracionUpdate" />
             </div>
 
             <input id="idUpdate" name="idUpdate" type="hidden" value="">
@@ -173,16 +193,18 @@
         <thead class="thead-light">
           <tr>
             <th>ID</th>
-            <th>NOMBRE</th>
-            <th>PRECIO X DIA</th>
-            <th>STOCK</th>
-            <th>CATEGORIA PRODUCTO</th>
+            <th>NOMBRE EMPLEADO</th>
+            <th>NOMBRE CONSTRUCTORA</th>
+            <th>FECHA</th>
+            <th>HORA</th>
+            <th>DIA</th>
+            <th>DURACION</th>
             <th>EDITAR</th>
             <th>ELIMINAR</th>
             <th>DETALLE</th>
           </tr>
         </thead>
-        <tbody id="products" class="listado-estudiantes"></tbody>
+        <tbody id="cotization" class="listado-estudiantes"></tbody>
       </table>
     </div>
     

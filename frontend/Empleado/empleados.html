@@ -70,7 +70,7 @@
             ></button>
           </div>
           <div class="modal-body ">
-            <form id="formulario" class="form-select-lg mb-3" method="POST">
+            <form id="formularioEmpleado" class="form-select-lg mb-3">
            
               <div class="mb-3">
                 <label for="EmpleadoNombre" class="col-form-label">Empleado Nombre:</label>
@@ -92,6 +92,9 @@
                 <input type="password" class="form-control formTam" id="EmpleadoPassword" />
               </div>
 
+              <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+            </form>
+
           </div>
           <div class="modal-footer">
             <button
@@ -101,9 +104,8 @@
             >
               Close
             </button>
-            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+            
           </div>
-        </form>
         </div>
       </div>
     </div>
@@ -114,7 +116,7 @@
     <!-- MODAL UPDATE INI-->
     <div
     class="modal fade"
-    id="updateCategory"
+    id="updateEmployees"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -122,7 +124,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
-          <h2 class="modal-title" id="exampleModalLabel">Actualizar Categoria</h2>
+          <h2 class="modal-title" id="exampleModalLabel">Actualizar Empleado</h2>
           <button
             type="button"
             class="btn-close"
@@ -131,24 +133,31 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form id="formularioUpdate" class="form-select-lg mb-3" method="POST">
+          <form id="formularioUpdate" class="form-select-lg mb-3">
            
             <div class="mb-3">
-              <label for="CategoriaNombre" class="col-form-label">Categoria Nombre:</label>
-              <input type="text" class="form-control formTam" id="CategoriaNombreUpdate" />
+              <label for="EmpleadoNombreUpdate" class="col-form-label">Empleado Nombre:</label>
+              <input type="text" class="form-control formTam" id="EmpleadoNombreUpdate" />
             </div>
            
             <div class="mb-3">
-              <label for="Descripcion" class="col-form-label">Descripcion:</label>
-              <input type="text" class="form-control formTam" id="DescripcionUpdate" />
+              <label for="EmpleadoEmailUpdate" class="col-form-label">Email Empleado:</label>
+              <input type="text" class="form-control formTam" id="EmpleadoEmailUpdate" />
             </div>
 
             <div class="mb-3">
-              <label for="Imagen" class="col-form-label">Imagen:</label>
-              <input type="text" class="form-control formTam" id="ImagenUpdate" />
+              <label for="EmpleadoCelularUpdate" class="col-form-label">Celular:</label>
+              <input type="number" class="form-control formTam" id="EmpleadoCelularUpdate" />
+            </div>
+
+            <div class="mb-3">
+              <label for="EmpleadoPasswordUpdate" class="col-form-label">Password:</label>
+              <input type="password" class="form-control formTam" id="EmpleadoPasswordUpdate" />
             </div>
 
             <input id="idUpdate" name="idUpdate" type="hidden" value="">
+            <button type="submit" class="btn btn-primary btn-lg">Actualizar</button>
+          </form>
          
         </div>
         <div class="modal-footer">
@@ -159,9 +168,8 @@
           >
             Close
           </button>
-          <button type="submit" class="btn btn-primary btn-lg">Actualizar</button>
+          
         </div>
-      </form>
       </div>
     </div>
   </div>
@@ -182,7 +190,6 @@
             <th>PASSWORD</th>
             <th>EDITAR</th>
             <th>ELIMINAR</th>
-            <th>DETALLE</th>
           </tr>
         </thead>
         <tbody id="employees" class="listado-estudiantes"></tbody>
